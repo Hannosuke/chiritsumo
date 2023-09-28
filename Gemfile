@@ -15,6 +15,7 @@ gem "bootsnap", require: false
 gem "omniauth-esa"
 gem "omniauth-rails_csrf_protection", "~> 1.0.1"
 gem "esa"
+gem "redcarpet"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
