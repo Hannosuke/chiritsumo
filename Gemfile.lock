@@ -140,6 +140,9 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     pg (1.5.4)
     psych (5.1.0)
       stringio
@@ -226,6 +229,7 @@ DEPENDENCIES
   debug
   jsbundling-rails
   omniauth-esa
+  omniauth-rails_csrf_protection (~> 1.0.1)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.8)
