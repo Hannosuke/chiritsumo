@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :esa_id, presence: true, uniqueness: true
+  validates :name, :screen_name, presence: true
+
   def self.find_or_create_for_oauth(auth)
     find_or_create_by!(esa_id: auth.uid) do |user|
       user.esa_id = auth.uid
