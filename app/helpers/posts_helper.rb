@@ -12,4 +12,15 @@ module PostsHelper
       return markdown.render(match_data[1].lstrip)
     end
   end
+
+  def diary_date(full_name)
+    pattern = /\/(\d{4}\/\d{2}\/\d{2})\//
+    match_data = full_name.match(pattern)
+
+    if match_data
+      return match_data[1]
+    else
+      return "日付が取得できませんでした"
+    end
+  end
 end
