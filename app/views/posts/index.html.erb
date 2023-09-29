@@ -5,11 +5,11 @@
     <div id="<%= post["number"] %>">
       <p>
         <strong>Date:</strong>
-        <%= post["created_at"] %>
+        <%= diary_date(post["full_name"]) %>
       </p>
       <p>
         <strong>ひとこと:</strong>
-        <%= brief_comment(post["body_md"]) %>
+        <%= raw (brief_comment(post["body_md"])) %>
       </p>
     </div>
   <% end %>
