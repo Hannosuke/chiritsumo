@@ -1,1 +1,16 @@
 <h1>Posts#index</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <div id="<%= post["number"] %>">
+      <p>
+        <strong>Date:</strong>
+        <%= diary_date(post["full_name"]) %>
+      </p>
+      <p>
+        <strong>ひとこと:</strong>
+        <%= raw (brief_comment(post["body_md"])) %>
+      </p>
+    </div>
+  <% end %>
+</div>
