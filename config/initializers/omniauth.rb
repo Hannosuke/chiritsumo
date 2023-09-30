@@ -1,6 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :esa,
-           Rails.application.credentials.esa[:client_id],
-           Rails.application.credentials.esa[:client_secret],
-           scope: 'read'
+  provider :esa, ENV["CLIENT_ID"], ENV["CLIENT_SECRET"], scope: 'read'
 end
