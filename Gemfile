@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.1"
 
+gem "dotenv-rails", "2.8.1", groups: [:development, :test]
 gem "rails", "~> 7.0.8"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
