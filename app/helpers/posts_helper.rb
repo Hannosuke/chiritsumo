@@ -8,7 +8,7 @@ module PostsHelper
     if expected_data.empty?
       "なし"
     else
-      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
       expected_text = expected_data.gsub("\r\n", "\r\n\r\n")
 
       markdown.render(expected_text)
