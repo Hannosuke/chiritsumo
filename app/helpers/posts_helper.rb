@@ -3,13 +3,15 @@ module PostsHelper
     pattern = /# ひとこと(.*?)\r\n\r\n#/m
 
     match_data = daily_report_text.match(pattern)
+    expected_data = match_data[1].lstrip
 
-    if match_data[1].lstrip.empty?
-      return "なし"
+    if expected_data.empty?
+      "なし"
     else
-      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, fenced_code_blocks: true)
+      expected_text = expected_data.gsub("\r\n", "\r\n\r\n")
 
-      return markdown.render(match_data[1].lstrip)
+      markdown.render(expected_text)
     end
   end
 
