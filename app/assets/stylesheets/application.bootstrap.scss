@@ -1,2 +1,23 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.login-btn-outline-esa {
+  --#{$prefix}btn-padding-x: 80px;
+  --#{$prefix}btn-padding-y: 15px;
+  --#{$prefix}btn-font-size: 25px;
+  --#{$prefix}btn-color: #0A9B94;
+  --#{$prefix}btn-border-color: #0A9B94;
+  --#{$prefix}btn-border-width: 3px;
+  --#{$prefix}btn-hover-color: white;
+  --#{$prefix}btn-hover-bg: #0A9B94;
+  --#{$prefix}btn-hover-border-color: #0A9B94;
+  --#{$prefix}btn-focus-shadow-rgb: #0A9B94;
+  --#{$prefix}btn-active-color: #0A9B94;
+  --#{$prefix}btn-active-bg: #0A9B94;
+  --#{$prefix}btn-active-border-color: #0A9B94;
+  --#{$prefix}btn-active-shadow: #0A9B94;
+  --#{$prefix}btn-disabled-color: #0A9B94;
+  --#{$prefix}btn-disabled-bg: transparent;
+  --#{$prefix}btn-disabled-border-color: #0A9B94;
+  --#{$prefix}gradient: none;
+}
