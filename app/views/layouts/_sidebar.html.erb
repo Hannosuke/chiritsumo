@@ -1,0 +1,10 @@
+<div class="vh-100 py-5 px-4 shadow d-flex flex-column justify-content-between">
+  <div class="text-center">
+    <%= image_tag "logo.png", size: "150x60", class: "mt-4" %>
+  </div>
+  <% if current_user %>
+    <div class="text-center">
+      <%= button_to "ログアウト", logout_path, method: :delete, class: "btn btn-outline-secondary" %>
+    </div>
+  <% end %>
+</div>
