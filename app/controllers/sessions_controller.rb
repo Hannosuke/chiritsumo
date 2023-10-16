@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
 
     if user.persisted?
       session[:user_id] = user.id
+      flash[:notice] = "ログインしました。"
       redirect_to posts_path
     else
       redirect_to login_path
@@ -21,6 +22,7 @@ class SessionsController < ApplicationController
   def destroy
     reset_session
 
+    flash[:notice] = "ログアウトしました。"
     redirect_to login_path
   end
 end
