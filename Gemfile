@@ -17,6 +17,7 @@ gem "omniauth-esa"
 gem "omniauth-rails_csrf_protection", "~> 1.0.1"
 gem "esa"
 gem "redcarpet", "~> 3.6.0"
+gem "rouge", "~> 4.1.3"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
