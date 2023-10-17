@@ -6,6 +6,8 @@ end
 
 module PostsHelper
   def markdown(text)
+    return "ひとことがありません。" unless text
+
     options = {
       no_styles:     true,
       with_toc_data: true,

@@ -9,6 +9,9 @@ class PostExtractor
     pattern = /# ひとこと(.*?)\r\n\r\n#/m
 
     match_data = daily_report_text.match(pattern)
+
+    return unless match_data
+
     expected_data = match_data[1].lstrip
 
     if expected_data.empty?
