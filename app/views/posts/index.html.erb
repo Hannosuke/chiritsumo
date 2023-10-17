@@ -3,7 +3,7 @@
     <% @posts.each do |post| %>
       <div class="border-bottom pt-4 pb-4" id="<%= post["number"] %>">
         <h5 class="mb-3"><%= diary_date(post["full_name"]) %></h5>
-        <p class="py-2 mb-1"><%= raw (brief_comment(post["body_md"])) %></p>
+        <p class="py-2 mb-1"><%= raw markdown((brief_comment(post["body_md"]))) %></p>
       </div>
     <% end %>
     <%= turbo_frame_tag "posts-page-#{@next_page}", loading: :lazy, src: posts_path(page: @next_page) %>
