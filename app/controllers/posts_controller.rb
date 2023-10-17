@@ -1,14 +1,21 @@
 class PostsController < ApplicationController
-  TEAM = "everyleaf"
+  rescue_from EsaClient::UnauthorizedError, with: :handle_unauthorized_error
 
   def index
-    client = Esa::Client.new(access_token: current_user.access_token, current_team: TEAM)
-    response = client.posts(q: "@me category:日報", per_page: 30, page: params[:page])
+    @esa_client ||= EsaClient.new(current_user.access_token)
+    response = @esa_client.get_posts(params[:page])
 
-    post_extractor = PostExtractor.new
+    @post_extractor ||= PostExtractor.new
 
-    @posts = post_extractor.run(response.body["posts"])
+    @posts = @post_extractor.run(response.body["posts"])
     @current_page = response.body["page"]
     @next_page = response.body["next_page"]
+  end
+
+  private
+
+  def handle_unauthorized_error
+    reset_session
+    redirect_to login_path, notice: "アクセストークンが無効です。もう一度ログインし直してください。"
   end
 end
