@@ -1,7 +1,11 @@
 class PostExtractor
   def run(posts)
     post_contents = posts.map do |post|
-                      { date: diary_date(post["full_name"]), body: brief_comment(post["body_md"])}
+                      {
+                        number: post["number"],
+                        date: diary_date(post["full_name"]),
+                        body: brief_comment(post["body_md"]),
+                      }
                     end
   end
 

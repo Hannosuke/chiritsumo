@@ -1,7 +1,7 @@
 <div id="posts" class="pb-5">
   <%= turbo_frame_tag "posts-page-#{@current_page}" do %>
     <% @posts.each do |post| %>
-      <div class="border-bottom pt-4 pb-4" id="<%= post["number"] %>">
+      <div class="border-bottom pt-4 pb-4" id="<%= post[:number] %>">
         <h5 class="mb-3"><%= post[:date] %></h5>
         <p class="py-2 mb-1"><%= markdown(post[:body]) %></p>
       </div>
