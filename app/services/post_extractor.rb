@@ -9,17 +9,11 @@ class PostExtractor
     pattern = /# ひとこと(.*?)\r\n\r\n#/m
 
     match_data = daily_report_text.match(pattern)
-
-    return unless match_data
-
     expected_data = match_data[1].lstrip
 
-    if expected_data.empty?
-      "なし"
-    else
-      expected_text = expected_data.gsub("\r\n", "\r\n\r\n")
-      expected_data
-    end
+    return "なし" if expected_data.empty?
+
+    expected_data
   end
 
   def diary_date(full_name)
