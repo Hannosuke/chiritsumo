@@ -1,6 +1,6 @@
 class EsaClient
   TEAM = "everyleaf"
-  PER_PAGE = 30
+  PER_PAGE = 70
   SEARCH_QUERY_KEY = "@me category:日報"
 
   class UnauthorizedError < StandardError; end
