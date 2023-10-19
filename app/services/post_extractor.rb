@@ -10,7 +10,7 @@ class PostExtractor
   end
 
   def brief_comment(daily_report_text)
-    pattern = /# ひとこと(.*?)\r\n\r\n#/m
+    pattern = /# ひとこと(.*?)\r\n#/m
 
     match_data = daily_report_text.match(pattern)
     expected_data = match_data[1].lstrip
